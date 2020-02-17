@@ -2,21 +2,21 @@ import './styles/style.css'
 import getList from './js/get-list'
 import createElement from './js/create-element'
 import search from './js/search'
-import {doButtonAdd} from './js/create-html'
-import {doList} from './js/create-html'
+import {createButtonAdd} from './js/create-html'
+import {createListOnPage} from './js/create-html'
 import showMenu from './js/show-menu'
-import {showModalWindow} from './js/functionality-modal-window'
+import {showModalWindow} from './js/modal-window-operations'
 
 (async function () {
 
     const wrapper = createElement('div', {'className':'wrapper'});
 
-    const buttonAdd = doButtonAdd();
+    const buttonAdd = createButtonAdd();
     buttonAdd.addEventListener('click', showModalWindow);
 
     const list = await getList();
 
-    const ulEl = doList(list);
+    const ulEl = createListOnPage(list);
     
     ulEl.addEventListener('click', showMenu);
 

@@ -1,5 +1,4 @@
 import { createMenu } from './create-html'
-import doChangeOrSaveOrDelete from './functionality-menu'
 
 export default function showMenu(event) {
 
@@ -36,10 +35,10 @@ export default function showMenu(event) {
 
             if (event.target.className === 'save') {
                 const newLi = document.createElement('li');
-                const spanEl = newLi.appendChild(document.createElement('span'));
+                const spanEl = document.createElement('span');
                 spanEl.innerText = inputEl.value;
-
                 newLi.style.width = "auto";
+                newLi.append(spanEl);
 
                 const divEl = target.previousElementSibling.parentNode;
                 divEl.insertBefore(newLi, target);

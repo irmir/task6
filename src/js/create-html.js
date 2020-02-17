@@ -1,14 +1,14 @@
 import createList from './create-list'
 import createElement from './create-element'
-import { addText } from './functionality-modal-window'
-import { closeWindow } from './functionality-modal-window'
+import { addText } from './modal-window-operations'
+import { closeWindow } from './modal-window-operations'
 
-function doButtonAdd() {
+function createButtonAdd() {
     const buttonAdd = createElement('button', { 'className': 'add', 'innerText': 'add' }, { 'id': 'butt-elem' });
     return buttonAdd;
 }
 
-function doList(arrList) {
+function createListOnPage(arrList) {
     const ulEl = createElement('ul', null, { 'id': 'ul-elem' });
     ulEl.appendChild(createList(arrList));
     return ulEl;
@@ -64,8 +64,8 @@ function createModalWindow() {
     return background;
 }
 
-export { doButtonAdd }
-export { doList }
+export { createButtonAdd }
+export { createListOnPage }
 export { createMenu }
 export { createModalWindow }
 
